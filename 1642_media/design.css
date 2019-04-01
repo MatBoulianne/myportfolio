@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+/* CSS Variables */
+:root {
+	--primary-color: #b90415;
+	--primary-color-hover: #d3071b;
+	--secondary-color: #103063;
+	--secondary-color-hover: #143f85;
+	--light-color: #f4f4f4;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: monospace, sans-serif;
+  font-size: 1rem;
+  background-color: #252529;
+  margin: 0;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1 {
+	font-family: Russian Regular, monospace, sans-serif;
+	font-size: 3.5rem;
+}
+
+.v-header {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+
+.container {
+	max-width: 960px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin: auto;
+	text-align: center;
+}
+
+.fullscreen-video-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.fullscreen-video-wrap video {
+	min-width: 100%;
+	min-height: 100%;
+		 filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
+.header-overlay {
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	background: #034bb0;
+	z-index: 1;
+	opacity: 0.65;
+}
+
+.header-content {
+	z-index: 2;
+	margin: auto;
+}
+
+.section {
+	padding: 20px 0;
+}
+
+.section-a {
+	height: 100vh;
+}
+/* Section Bio Old Version
+.section-b {
+	background: #333;
+	height: 60vh;
+}
+Nouveau code ci-dessous*/
+.fullscreen-video-wrap-bio {
+	position: absolute;
+	top: 200%;
+	left: 0;
+	width: 100%;
+	height: 65vh;
+	overflow: hidden;
+	z-index: -1;
+}
+
+.fullscreen-video-wrap-bio video {
+	min-width: 100%;
+	min-height: 100%;
+	 filter: blur(6px);
+  -webkit-filter: blur(6px);
+}
+
+.bio-overlay {
+	height: 65vh;
+	position: absolute;
+	top: 200%;
+	left: 0;
+	width: 100vw;
+	background: #034bb0;
+	z-index: -1;
+	opacity: 0.65;
+}
+
+.bio-content {
+	display: grid;
+    grid-template-columns: 4fr 1fr 3fr;
+	grid-gap: 12rem;
+	padding-right: 5rem;
+	
+	z-index: 5;
+	margin: auto;
+}
+
+.bio-content ul {
+	list-style: none;
+	font-family: monospace, sans-serif;
+}
+
+.bio-content li:first-child {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.section-c {
+	margin-top: 7.5rem;
+	height: 35vh;
+}
+
+.section-c a {
+	color: #fff;
+}
+
+.fa-envelope-square {
+	font-size: 3.5em;
+	padding-bottom: 0.5em;
+}
+
+.fa-youtube-square {
+	font-size: 3em;
+	padding-bottom: 0.8em;
+}
+
+.fa-vimeo-square {
+	font-size: 3em;
+	padding-left: 0.5em;
+}
+
+.fa-instagram {
+	font-size: 3em;
+	padding-left: 0.5em;
+}
+
+.fa-facebook-square {
+	font-size: 3em;
+	padding-left: 0.5em;
+}
+
+.fa-linkedin {
+	font-size: 3em;
+	padding-left: 0.5em;
+}
+
+.fa-twitter-square {
+	font-size: 3em;
+	padding-left: 0.5em;
+}
+
+/* Projets */
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 2rem;
+}
+
+.wrapper img {
+	width: 85%;
+	margin: auto;
+	/* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+    filter: gray; /* IE5+ */
+    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.wrapper img:hover {
+	border: 3px solid #fff;
+	filter: none;
+     -webkit-filter: grayscale(0);
+     -webkit-transform: scale(1.01);
+}
+
+/* Overlay sur les projets */
+.container-projet {
+	position: relative;
+}
+
+.image {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.overlay-projet {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: black;
+	overflow: hidden;
+	width: 83.5%;
+	height: 0;
+	transition: .4s ease;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 7.5px;
+	
+	font-family: monospace, sans-serif;
+}
+
+.container-projet:hover .overlay-projet {
+	height: 15%;
+}
+
+.text {
+	white-space: nowrap;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	overflow: hidden;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+/* Buttons */
+.btn {
+	padding: 1rem;
+	color: #fff;
+	display: inline-block;
+}
+
+.btn-primary {
+	background: var(--primary-color);
+}
+
+.btn-primary:hover {
+	background: var(--primary-color-hover);
+}
+
+.btn-secondary {
+	background: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+	background: var(--secondary-color-hover);
+}
+
+/* Text colors */
+.text-primary {
+	color: var(--primary-color);
+}
+
+.text-secondary {
+	color: var(--secondary-color);
+}
+
+.text-light {
+	color: var(--light-color);
+}
+
+.bg-light {
+	background: var(--light-color);
+	color: #333;
+}
+
+.mb {
+	margin-bottom: 1rem;
+}
+
+.mt {
+	margin-top: 1rem;
+}
+
+/* Navigation */
+nav {
+  height: 40px;
+  width: 100%;
+  background-color: #333;
+  color: #eee;
+  position: fixed;
+  z-index: 3;
+  font-family: monospace, sans-serif;
+}
+nav ul {
+  padding: 0;
+  margin: 0;
+}
+nav li {
+  display: inline;
+  float: left;
+}
+nav a {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 0;
+  color: #eee;
+  text-decoration: none;
+}
+nav li:hover {
+  background-color: #444;
+}
+nav a#openup {
+  display: none;
+}
+
+.video-showcase {
+	height: 80vh;
+}
+
+@media screen and (max-width: 580px) {
+  .hide-on-small {
+	  display: none;
+  }
+
+  nav {
+    height: auto;
+    border-bottom: 0;
+  }
+  nav ul {
+    display: none;
+    height: auto;
+  }
+  nav li {
+    width: 100%;
+    float: left;
+    position: relative;
+  }
+  nav a {
+    text-align: left;
+    width: 100%;
+    text-indent: 25px;
+    background: #333;
+    border-bottom: 1px solid #555;
+  }
+  nav a:hover {
+    background: #444;
+  }
+  nav a#openup:after {
+    content: "|||";
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-90deg);
+    /* Safari and Chrome */
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    top: 20px;
+  }
+  nav a#openup {
+    display: block;
+    background-color: #333;
+    width: 100%;
+    position: relative;
+  }
+}
+.cf:before, .cf:after {
+  content: "";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  zoom: 1;
+}
+
+@media(max-width: 960px) {
+	.container {
+		padding-right: 3rem;
+		padding-left: 3rem;
+	}
+}

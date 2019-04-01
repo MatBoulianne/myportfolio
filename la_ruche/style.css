@@ -1,0 +1,42 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.showcase::after {
+	content: "";
+	height: 92.5vh;
+	width: 100%;
+	background-image: url(images/cover1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: block;
+	filter: blur(2px);
+
+}
+
+.content {
+	position: absolute;
+	z-index: 1;
+	top: 20%;
+	left: 38%;
+	margin-top: 105px;
+	margin-left: -145px;
+	width: 600px;
+	height: 350px;
+	text-align: center;
+	transition: all 1000ms;
+}
+
+.content .title {
+	font-size: 8.2rem;
+	margin-top: 1rem;
+	color: #e69b04;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.section-social-media .fa-4x {
+	margin: 5px 10px;
+}
+
