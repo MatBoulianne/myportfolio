@@ -1,3 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body, html {
 	height: 100%;
 	margin: 0;
@@ -8,8 +14,130 @@ body, html {
 	color: #666;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 li {
 	list-style: none;
+}
+
+.header {
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	height: 100vh;
+}
+
+.grid-title {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 60px;
+	align-items: center;
+}
+
+.title-header {
+	width: 100%;
+	text-align: center;
+	color: #000;
+	font-size: 45px;
+	font-weight: 800;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+}
+
+.title-header .border {
+	background-color: #111;
+	color: #fff;
+	padding: 20px;
+}
+
+.contact-header {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+	margin: -150px auto;
+}
+
+.contact-header i {
+	border-radius: 50%;
+}
+
+.contact-header .cv {
+	background-color: #111;
+	border-radius: 6px;
+	padding-bottom: 15px;
+	padding-left: 3.5px;
+	margin-right: 11px;
+	height: 52px;
+	width: 52px;
+}
+
+.contact-header h2 {
+	color: #92928F;
+	margin-left: 5px;
+}
+
+/* Link below for the contact icons
+https://codepen.io/asistapl/pen/QEAgdA?editors=1100 */
+
+.c-icons {
+    fill: currentColor;
+    transition: .2s;
+}
+
+.c-link--email:hover  { color: #55acee; opacity: .95;}
+.c-link--github:hover   { color: #833ab4; opacity: .9;}
+.contact-header .cv:hover    { background-color: #bd081c; opacity: .95;}
+.c-link--email:hover::after  { background: #55acee;}
+.c-link--github:hover::after   { background: #833ab4;}
+.c-link--cv:hover::after    { background: #bd081c;}
+
+.c-link {
+    position: relative;
+    color: #111;
+}
+
+.c-tooltip::before,
+.c-tooltip::after {
+    display: block;
+    position: absolute;
+    left: 33%;
+    transform: translate(-50%, 10px);
+    opacity: 0;
+    transition: .2s;
+}
+
+.c-tooltip:nth-child(2)::before,
+.c-tooltip:nth-child(2)::after {
+	left: 43%;
+}
+
+.c-tooltip::before {
+    content: '';
+    top: calc(100% + 2px);
+    border: solid 5px transparent;
+    border-top-color: currentColor;
+}
+
+.c-tooltip:nth-child(2)::before {
+    border-top-color: #bd081c;
+}
+
+.c-tooltip::after {
+    content: attr(aria-label);
+    top: calc(100% + 12px);
+    padding: .1em .7em;
+    font-size: .875rem;
+    color: white;
+    border-radius: 3px;
+}
+
+.c-tooltip:hover::before,
+.c-tooltip:hover::after {
+    opacity: .8;
+    transform: translate(-50%);
 }
 
 .pimg1, .pimg2, .pimg3, .pimg4, .pimg5, .pimg6, .pimg7 {
@@ -35,12 +163,12 @@ li {
 }
 
 .pimg3 {
-	background-image: url("images/vintage1_smaller.jpg");
+	background-image: url("images/people2_smaller.jpg");
 	min-height: 400px;
 }
 
 .pimg4 {
-	background-image: url("images/people2_smaller.jpg");
+	background-image: url("images/vintage1_smaller.jpg");
 	min-height: 600px;
 }
 
@@ -95,10 +223,6 @@ li {
 	background-color: #111;
 	color: #fff;
 	padding: 20px;
-}
-
-.header-description {
-	top: 65%;
 }
 
 .text-light {
@@ -184,6 +308,250 @@ li {
 	color: #000;
 }
 
+/* from codePen*/
+
+.grid {
+	position: relative;
+	margin: 0 auto;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
+	grid-template-columns: 1fr 1fr;
+	display: grid;
+	grid-gap: 1em;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	overflow: hidden;
+	margin: 10px 1%;
+	min-width: 320px;
+	max-width: 480px;
+	max-height: 360px;
+	width: 100%;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #F4F4F4;
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* Individual effects */
+figure.effect-layla {
+	background: #000;
+}
+
+figure.effect-layla img {
+	height: 390px;
+}
+
+figure.effect-layla figcaption {
+	padding: 0.1em;
+}
+
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after {
+	position: absolute;
+	content: '';
+	opacity: 0;
+}
+
+figure.effect-layla figcaption::before {
+	top: 50px;
+	right: 30px;
+	bottom: 50px;
+	left: 30px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+figure.effect-layla figcaption::after {
+	top: 30px;
+	right: 50px;
+	bottom: 30px;
+	left: 50px;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	-webkit-transform: scale(1,0);
+	transform: scale(1,0);
+	-webkit-transform-origin: 100% 0;
+	transform-origin: 100% 0;
+}
+
+figure.effect-layla h2 {
+	padding-top: 26%;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+}
+
+figure.effect-layla p {
+	padding: 0.5em 2em;
+	text-transform: none;
+	opacity: 0;
+	-webkit-transform: translate3d(0,-10px,0);
+	transform: translate3d(0,-10px,0);
+}
+
+figure.effect-layla img,
+figure.effect-layla h2 {
+	-webkit-transform: translate3d(0,-30px,0);
+	transform: translate3d(0,-30px,0);
+}
+
+figure.effect-layla img,
+figure.effect-layla figcaption::before,
+figure.effect-layla figcaption::after,
+figure.effect-layla p {
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+}
+
+figure.effect-layla:hover img {
+	opacity: 0.5;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-layla:hover figcaption::before,
+figure.effect-layla:hover figcaption::after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-layla:hover figcaption::after,
+figure.effect-layla:hover h2,
+figure.effect-layla:hover p,
+figure.effect-layla:hover img {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+/* See Code Buttons 
+https://codepen.io/Emanuel_G/pen/YVJOZo?editors=1100 */
+
+
+.button{
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  margin: 1em 0.8em;
+  text-transform: uppercase;
+  }
+  
+  .see-code{
+    color: #ddd;
+    }
+    .see-code::after,
+    .see-code::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      border: 2px solid;
+      transition: all 0.6s ease;
+      border-radius: 2px;
+      }
+
+    .see-code::after {
+      bottom: 0;
+      right: 0;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-bottom-color: #ddd;
+      border-right-color: #ddd;
+      }
+
+    .see-code::before {
+      top: 0;
+      left: 0;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+      border-top-color: #ddd;
+      border-left-color: #ddd;
+      }
+
+    .see-code:hover:after,
+    .see-code:hover:before{
+      width: 103%;
+      height: 103%;
+  }
+
 /* Version 1
 .wrapper-footer {
 	display: flex;
@@ -256,7 +624,18 @@ footer {
 	}
 }
 
-@media(max-width:1096px){
+@media(max-width: 960px) {
+
+	.grid {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	}
+}
+
+@media(max-width:1200px){
 	
 	.wrapper-projet {
 		display: grid;
