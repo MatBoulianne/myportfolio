@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter|Kanit&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: #222;
+    font-family: 'Kanit', sans-serif;
+}
+
+#weather-container {
+    color: #fff;
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    opacity: 0.8;
+    transition: .4s ease all;
+}
+
+#weather-container:hover {
+    opacity: 0.95;
+}
+
+#weather-description {
+
+}
+
+#city-header {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 30px;
+}
+
+#description-and-img {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    margin: -10px 0;
+}
+
+#temperature {
+    margin-right: 0.5rem;
+}
+
+.search-box {
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    background-color: #222;
+    height: 30px;
+    border-radius: 40px;
+    padding: 8px;
+    opacity: 0.2;
+    transition: 0.4s;
+}
+
+.search-box a {
+    text-decoration: none;
+}
+
+.search-box:hover {
+    opacity: 1;
+}
+
+.search-box:hover > .search-txt {
+    width: 268px;
+    padding: 0 6px;
+}
+
+.search-btn {
+    color: #fff;
+    float: right;
+    width: 40px;
+    height: 30px;
+    border-radius: 50%;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.container {
+    margin: 155px auto 0 auto;
+    width: 96%; /* 82.43 */
+}
+
+.accordion {
+    background: #242424;
+    width: 100%;
+    min-width: 800px;
+    display: block;
+    list-style-type: none;
+    overflow: hidden;
+    height: 600px;
+    font-size: 0;
+}
+
+.tab {
+    display: inline-block;
+    border-right: #333 solid 1px;
+    width: 150px; /* Initialy at 80px */
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+.tab:first-child {
+	background: url(img/godard2.jpg) no-repeat 52% 52%/cover;
+}
+
+.tab:nth-child(2) {
+	background: url(img/herzog2.jpg) no-repeat center center/cover;
+}
+
+.tab:nth-child(3) {
+	background: url(img/fellini1.jpg) no-repeat center center/cover;
+}
+
+.tab:nth-child(4) {
+	background: url(img/tarkovsky3.jpg) no-repeat 55% 55%/cover;
+}
+
+.tab:nth-child(5) {
+	background: url(img/kubrick4.jpg) no-repeat 62% 62%/cover;
+}
+
+.tab:hover {
+    width: 450px;
+}
+
+/* Code below added to fix bug 
+.tab:nth-child(5):hover {
+    width: 450px;
+}*/
+
+.tab:hover .img-director a:before {
+    margin-left: -100px;
+}
+
+.tab:hover .img-director a:after {
+    margin-left: -5px;
+}
+
+.tab .content {
+    /* background: #fff; COULEUR DE BASE POUR LE CONTENT */
+    color: #fff;
+    width: 300px;
+    height: 600px;
+    margin-left: 150px;
+    position: relative;
+    /*padding: 50px 0 0 15px; REMOVED TO CENTER BETTER*/
+}
+
+.tab .godard-movie {
+	background: url(img/godard-movie2.jpg) no-repeat 75% 75%/cover;
+}
+
+.tab .godard-movie .overlay {
+	background-color: rgba(7,160,195,0.3); /* Light-Blue */
+	height: 100%;
+}
+
+.tab .herzog-movie {
+	background: url(img/herzog-movie1.jpg) no-repeat center left/cover;
+}
+
+.tab .herzog-movie .overlay {
+	background-color: rgba(22,96,27,0.3); /* Green */
+	height: 100%;
+}
+
+.tab .fellini-movie {
+	background: url(img/fellini-movie2.jpg) no-repeat center center/cover;
+}
+
+.tab .fellini-movie .overlay {
+	background-color: rgba(16,36,72,0.3); /* Blue */
+	height: 100%;
+}
+
+.tab .tarkovsky-movie {
+	background: url(img/tarkovsky-movie1.jpg) no-repeat 25% 25%/cover;
+}
+
+.tab .tarkovsky-movie .overlay {
+	background-color: rgba(240,200,8,0.3); /* Yellow */
+	height: 100%;
+}
+
+.tab .kubrick-movie {
+	background: url(img/kubrick-movie4.jpg) no-repeat 55% 55%/cover;
+}
+
+.tab .kubrick-movie .overlay {
+	background-color: rgba(244,121,107,0.3); /* Red */
+	height: 100%;
+}
+
+.tab .content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+/*.tab .content p {
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+    padding-right: 30px;
+}*/
+
+.tab .content li {
+	list-style: none;
+    font-size: 1.8rem;
+    line-height: 4rem;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.tab .content a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.tab .content a:hover {
+	text-decoration: underline;
+}
+
+.img-director a:before,
+.img-director a:after {
+    transition: all 0.4s ease-in-out 0.1s;
+    width: 80px;
+    height: 600px;
+    position: absolute;
+    text-indent: 0;
+    padding-top: 90px;
+    padding-left: 25px;
+    display: block;
+    color: #fff;
+}
+
+.img-director a:after {
+    font-size: 48px;
+    padding-left: 20px;
+    padding-top: 80px;
+    margin-left: 85px;
+}
+
+@media(max-width: 1098px) { /* Reudce my imgs or overflow-x hidden to stop bug */
+    .tab {
+        width: 125px;
+    }
+
+    .tab:hover {
+        width: 425px;
+    }
+}
+
+@media(max-width: 994px) { /* Reudce my imgs or overflow-x hidden to stop bug */
+    
+    .tab {
+        width: 120px;
+    }
+
+    .tab:hover {
+        width: 420px;
+    }
+}
+
+@media(max-width: 950px) {   
+    .tab {
+        width: 110px;
+    }
+
+    .tab:hover {
+        width: 410px;
+    }
+}
+
+@media(max-width: 890px) {
+    .tab {
+        width: 100px;
+    }
+
+    .tab:hover {
+        width: 405px;
+    }
+}
+
+@media(max-width: 841px) {
+    .container {
+        width: 70%;
+    }
+
+    .tab {
+        display: block;
+        width: 100%;
+        border-bottom: 3px #333 solid;
+    }
+
+    .accordion {
+        display: block;
+        min-width: 450px;
+        height: auto;
+    }
+
+    .tab .content {
+        width: 85%;
+    }
+
+    .tab:hover {
+        width: 100%;
+    }
+
+    .tab .content {
+    /* background: #fff; COULEUR DE BASE POUR LE CONTENT */
+    color: #fff;
+    width: 62%; /* 300px  ~ 62% good when at 950px max-width, reduce it accordingly */
+    height: 600px; /* 600px */
+    margin-left: 250px; /* 250px */
+    position: relative;
+    /*padding: 50px 0 0 15px; REMOVED TO CENTER BETTER*/
+    }
+
+    .tab:first-child {
+    background: url(img/godard1.jpg) no-repeat 52% 52%/cover;
+    }
+
+    .tab:nth-child(2) {
+    background: url(img/herzog4.jpg) no-repeat center center/cover;
+    }
+
+    .tab:nth-child(3) {
+    background: url(img/fellini3.jpg) no-repeat center center/cover;
+    }
+
+    .tab:nth-child(4) {
+    background: url(img/tarkovsky4.jpg) no-repeat 45% 45%/cover;
+    }
+
+    .tab:nth-child(5) {
+    background: url(img/kubrick5.jpg) no-repeat 55% 55%/cover;
+    }
+
+    .tab .godard-movie {
+    background: url(img/godard-movie1.jpe) no-repeat 75% 75%/cover;
+    }
+
+    .tab .herzog-movie {
+    background: url(img/herzog-movie2.jpg) no-repeat center center/cover;
+    }
+
+    .tab .fellini-movie {
+    background: url(img/fellini-movie3.jpg) no-repeat 55% 75%/cover;
+    }
+
+    .tab .tarkovsky-movie {
+    background: url(img/tarkovsky-movie3.jpg) no-repeat 50% 50%/cover;
+    }
+
+    .tab .kubrick-movie {
+    background: url(img/kubrick-movie3.jpg) no-repeat 55% 55%/cover;
+    }
+}
+
+@media(max-width: 730px) {
+    .tab .content li {
+    list-style: none;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    padding-right: 50px;
+    text-align: center;
+}
+}

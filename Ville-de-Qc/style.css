@@ -1,0 +1,742 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+:root {
+	--bg-color: #FFFFFF; /* White */
+	--darker-bg-color: #EEF0F3; /* White-Grey */
+	--main-color: #1B4588; /* Blue */
+	--light-main-color: #1967B2; /* Light Blue */
+	--accent-color: #0d7a40; /* Green */
+	--light-accent-color: #14a859; /* Light Green */
+	--overlay-color: rgba(0,0,0,0.3); /* Black with opacity */
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+p {
+	font-size: 24px;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	line-height: 1.5;
+}
+
+/* Utilities */
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: var(--overlay-color);
+}
+
+.btn-blue {
+	color: #FFFFF9;
+	background-color: var(--main-color);
+	padding: .9rem 1.1rem;
+	transition: .2s all ease-in;
+	font-weight: bold;
+	box-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+}
+
+.btn-blue:hover {
+	background-color: var(--light-main-color);
+}
+
+.btn-green {
+	color: #FFFFF9;
+	background-color: var(--accent-color);
+	padding: .9rem 1.1rem;
+	transition: .2s all ease-in;
+	font-weight: bold;
+	box-shadow: 1px 1px 8px rgba(0,0,0,0.3);
+}
+
+.btn-green:hover {
+	background-color: var(--light-accent-color);
+}
+
+/* Navbar */
+#contact-navbar {
+	width: 100%;
+	z-index: 2;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	padding: 0.6rem 4rem;
+	background-color: var(--main-color);
+	color: #fff;
+}
+
+#contact-navbar .contact-left i {
+	margin-right: 10px;
+	transition: .2s all ease-in;
+}
+
+#contact-navbar .contact-left i:hover {
+	color: var(--light-accent-color);
+}
+
+#contact-navbar .contact-right {
+	justify-self: flex-end;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+
+#contact-navbar .contact-right a {
+	transition: .2s all ease-in;
+}
+
+#contact-navbar .contact-right a:first-child {
+	margin-right: 1rem;
+}
+
+#contact-navbar .contact-right .language-btn-mobile {
+	margin-left: 1rem;
+	display: none;
+}
+
+#contact-navbar .contact-right a:hover {
+	color: var(--light-accent-color);
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+
+	border-top: 6px solid var(--main-color);
+}
+
+#navbar {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	padding: 1rem 2.3rem 1rem 2.3rem;
+	background-color: #fff;
+	box-shadow: 0px 1px 4px 5px rgba(0,0,0,0.2);
+}
+
+#navbar img {
+	min-width: 125px;
+	width: 50%;
+}
+
+#navbar .navbar-right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+#navbar .navbar-links1 {
+	margin-right: 1rem;
+}
+
+#navbar .navbar-links1 a {
+	transition: .2s ease-in all;
+	padding: 1rem 0.6rem;
+	color: var(--light-main-color);
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#navbar .navbar-links1 a:first-child:hover {
+	background-color: #fff;
+	color: var(--light-main-color);
+}
+
+#navbar .navbar-links1 a:hover {
+	background-color: var(--main-color);
+	color: #FFFFF9;
+}
+
+#navbar .navbar-links2 a {
+	margin-right: 0.8rem;
+	font-weight: bold;
+	font-size: 15px;
+	color: var(--light-main-color);
+	transition: .2s ease-in all;
+}
+
+#navbar .navbar-links2 .language-btn-deskop {
+	padding: 1rem 0.6rem;
+	display: inline-block;
+}
+
+#navbar .navbar-links2 a:hover {
+	background-color: var(--main-color);
+	color: #FFFFF9;
+}
+
+#navbar .navbar-links2 .btn-blue {
+	color: #FFFFF9;
+}
+
+#navbar .navbar-links2 .btn-blue:hover {
+	background-color: var(--light-main-color);
+}
+
+#navbar .navbar-links2 .btn-green {
+	color: #FFFFF9;
+}
+
+#navbar .navbar-links2 .btn-green:hover {
+	background-color: var(--light-accent-color);
+}
+
+/* Dropdown Menu */
+#navbar .navbar-links1 .dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+#navbar .navbar-links1 .dropdown .dropdown-content {
+	display: block;
+	opacity: 0;
+	position: absolute;
+	background-color: var(--main-color);
+	min-width: 270px;
+	box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+	z-index: 1;
+
+	margin-top: .5rem;
+	padding: .4rem;
+	transition: .2s ease-in all;
+	visibility: hidden;
+	transform: translate(0, -10px);
+}
+
+#navbar .navbar-links1 .dropdown .dropdown-content::before {
+	content:"";
+    position: absolute;
+    left: 15px;
+    top: -5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent var(--main-color) transparent;
+    z-index: 3;
+}
+
+#navbar .navbar-links1 .dropdown .dropdown-content a {
+	color: rgba(255, 255, 255, .8);
+	padding: 8px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+#navbar .navbar-links1 .dropdown .dropdown-content a:hover {
+	background-color: #fff;
+	color: var(--main-color);
+}
+
+#navbar .navbar-links1 .dropdown:hover .dropdown-content {
+	display: block;
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0);
+}
+
+/* Navbar Mobile */
+#navbar .logo .menu-wrap {
+	display: none;
+	color: #FFFFF9;
+}
+
+.menu .dropdown-mobile {
+	margin-bottom: 1.2rem;
+}
+
+.menu .dropdown-mobile .droptbtn-mobile {
+	font-size: 20px;
+	font-weight: bold;
+	background-color: transparent;
+	padding: .2rem .4rem;
+	transition: .5s ease-in-out all;
+}
+
+.menu .dropdown-mobile .dropdown-content-mobile {
+	display: flex;
+	flex-direction: column;
+	transition: .9s ease-in-out all;
+	opacity: 0;
+	visibility: hidden;
+	transform: translate(0, -10px);
+	max-height: 22px;
+}
+
+.menu .dropdown-mobile .dropdown-content-mobile a {
+	margin-top: .7rem;
+	opacity: 0.8;
+}
+
+.menu .dropdown-mobile .dropdown-content-mobile a:hover {
+	opacity: 1;
+}
+
+.menu .dropdown-mobile:hover .dropdown-content-mobile {
+	display: flex;
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0);
+	max-height: 450px;
+}
+
+.menu .dropdown-mobile:hover .droptbtn-mobile {
+	background-color: #FFFFF9;
+	color: var(--main-color);
+}
+
+/* Showcase */
+#showcase {
+	position: relative;
+	background: url(img/showcase.jpg) no-repeat top center/cover;
+	height: 500px;
+
+	color: #FFFFF9;
+
+	margin-top: 0;
+}
+
+#showcase .inner-showcase {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 4rem;
+
+	height: 100%;
+	width: 40%;
+}
+
+#showcase .inner-showcase h1 {
+	font-size: 36px;
+	font-weight: 900;
+}
+
+#showcase .inner-showcase p {
+	margin: 0.8rem 0;
+}
+
+#showcase .inner-showcase button {
+	width: 15rem;
+	padding: 0.8rem 0;
+	color: #fffff9;
+	font-weight: 800;
+	font-size: 20px;
+	background-color: transparent;
+	border: 1px solid #FFFFF9;
+	cursor: pointer;
+	transition: .2s all ease-in;
+}
+
+#showcase .inner-showcase button:hover {
+	background-color: #FFFFF9;
+	color: var(--main-color);
+}
+
+/* Section A */
+#section-a {
+	width: 85%;
+	margin: 1.5rem auto;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+#section-a .section-a-top h1 {
+	font-size: 38px;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+#section-a .section-a-mid {
+	margin: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#section-a .section-a-mid .img-grid {
+	width: 358px;
+	height: 200px;
+	color: #FFFFF9;
+	position: relative;
+
+	margin: 1rem;
+}
+
+#section-a .section-a-mid .img-grid .overlay:hover {
+	background-color: rgba(16,36,72,0.4);
+}
+
+#section-a .section-a-mid .img-candidates {
+	background: url(img/winterCarnival.jpg) no-repeat center center/cover;
+}
+
+#section-a .section-a-mid .img-electoral-district {
+	background: url(img/feteQuebec.jpg) no-repeat center center/cover;
+}
+
+#section-a .section-a-mid .img-action {
+	background: url(img/circus.png) no-repeat bottom center/cover;
+}
+
+#section-a .section-a-mid .img-platform {
+	background: url(img/cyclistes.jpg) no-repeat center center/cover;
+}
+
+#section-a .section-a-mid .img-grid .inner-img {
+	margin: 4.2rem 0.8rem;
+	font-size: 22px;
+}
+
+#section-a .section-a-bottom a {
+	color: var(--main-color);
+}
+
+#section-a .section-a-bottom a:hover {
+	color: var(--light-main-color);
+	text-decoration: underline;
+}
+
+/* Section B */
+#section-b {
+	background-color: var(--darker-bg-color);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 3rem 5rem;
+	border-bottom: 5px solid #2A317C;
+}
+
+#section-b .section-b-left {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 3rem;
+}
+
+#section-b .section-b-right {
+	position: relative;
+	width: 650px;
+	height: 257px;
+	overflow: hidden;
+}
+
+#section-b .section-b-right .img-zoom {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#section-b .section-b-right .img-zoom img {
+	-webkit-transition: 0.6s ease;
+	transition: 0.6s ease;
+}
+
+#section-b .section-b-right .img-zoom img:hover {
+	-webkit-transform: scale(1.07);
+	transform: scale(1.07);
+}
+
+/* Section C */
+#section-c {
+	width: 90%;
+	padding: 3rem 0;
+	margin: auto;
+}
+
+#section-c h1, h2 {
+	font-weight: bold;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+	transition: .2s ease all;
+}
+
+#section-c h1 {
+	font-size: 38px;
+}
+
+#section-c h1:hover {
+	color: var(--main-color);
+}
+
+#section-c h2:hover{
+	color: var(--main-color);
+}
+
+#section-c .instagram-section hr {
+	width: 55%;
+}
+
+#section-c .gallery {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+#section-c .gallery a:first-child {
+	grid-row: 1/3;
+	grid-column: 1/3;
+}
+
+#section-c .gallery a:nth-child(2) {
+	grid-column: 3/5;
+}
+
+#section-c .gallery img, .section-c .gallery a {
+	width: 100%;
+	height: 100%;
+}
+
+#section-c .twitter-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center; /* Try with column and remove justify-content and align-item */
+	align-items: center;
+}
+
+#section-c .twitter-section hr {
+	/*width: 55%;*/
+	/*display: none;  Remove display and comment above if I use columns */
+}
+
+#section-c .twitter-section .twitter-timeline {
+	/*margin: auto;*/
+	margin-left: 4rem;
+}
+
+/* Section D */
+#section-d {
+	color: var(--main-color);
+	text-align: center;
+	padding: 3rem 0;
+	border-top: 5px solid #2A317C;
+}
+
+#section-d img {
+	width: 12%;
+}
+
+#section-d i {
+	margin: 1rem 0;
+	margin-right: .5rem;
+	font-size: 20px;
+	transition: .2s ease-in all;
+}
+
+#section-d i:hover {
+	color: var(--light-main-color);
+}
+
+#section-d .search-form {
+	display: flex;
+	justify-content: center;
+	background-color: var(--main-color);
+	width: 420px;
+	height: 70px;
+	margin: auto;
+	margin-bottom: 1rem;
+}
+
+#section-d .search-form input {
+	width: 350px;
+	height: 40px;
+	padding-left: 1rem;
+	background-color: var(--light-main-color);
+	color: #fff;
+	border: 1.5px solid var(--main-color);
+	margin-top: 14px;
+	transition: .2s ease-in all;
+}
+
+#section-d .search-form input:focus {
+	background-color: #fff;
+	color: #000;
+}
+
+#section-d .search-form .btn-green {
+	padding: .5rem .8rem;
+	height: 40px;
+	margin-top: 14px;
+	box-shadow: .5px .5px 8px #333;
+}
+
+#section-d .small-para {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+/* Fixed Icons */
+#fixed-icons {
+	position: fixed;
+  	bottom: -6%;
+  	left: 1.5%;
+  	-webkit-transform: translateY(-50%);
+  	-ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: center;
+  	align-items: center;
+  	color: #fff;
+}
+
+#fixed-icons .fixed-share {
+	color: #D4D1DE;
+	font-size: 15px;
+	font-weight: bold;
+	padding: .2rem .4rem;
+	margin-bottom: .8rem;
+	border: 2px solid #D4D1DE;
+	background-color: #fff;
+	box-shadow: 0px 0px 2px #333;
+}
+
+#fixed-icons .icons {
+	display: flex;
+	flex-direction: column;
+}
+
+#fixed-icons .fixed-icon i {
+	border-radius: 50%;
+	transition: .2s ease-in all;
+	box-shadow: .5px .5px 8px rgba(0,0,0,0.5);
+}
+
+#fixed-icons .fixed-facebook i {
+	background-color: #3B5998;
+	padding: .6rem .8rem;
+}
+
+#fixed-icons .fixed-facebook i:hover {
+	background-color: #4C70BA;
+}
+
+#fixed-icons .fixed-twitter i {
+	background-color: #00ACED;
+	padding: .6rem .6rem;
+	margin: .8rem 0;
+}
+
+#fixed-icons .fixed-twitter i:hover {
+	background-color: #21C2FF;
+}
+
+#fixed-icons .fixed-mail i {
+	background-color: #6140AF;
+	padding: .6rem .6rem;
+} 
+
+#fixed-icons .fixed-mail i:hover {
+	background-color: #7E6BAA;
+}
+
+/* Change space setup of navbar */
+@media(max-width: 1120px){
+	#navbar {
+		grid-template-columns: 0.5fr 3fr;
+	}
+}
+
+/* Move FR btn to contact navbar and section b becomes 2 rows instead of 2 columns */
+@media(max-width: 992px){
+	#contact-navbar .contact-right .language-btn-mobile {
+		display: inline-block;
+	}
+
+	#navbar .navbar-links2 .language-btn-deskop {
+		display: none;
+	}
+
+	#section-b {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	}
+
+	#section-b .section-b-left {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1rem;
+	}
+
+	#section-b .section-b-right {
+		margin-top: -5rem;
+	}
+}
+
+/* Remove logo and flex the navbar to gain more space, adjust margin for section-b */
+@media(max-width: 952px) {
+	#navbar {
+		height: 120.05px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#navbar .navbar-logo {
+	display: none;
+	}
+
+	#section-b .section-b-right {
+		margin-top: -8rem;
+	}
+}
+
+/* Events become 1fr and bigger */
+@media(max-width: 859px) {
+	#section-a .section-a-mid {
+	grid-template-columns: 1fr;
+	}
+
+#section-a .section-a-mid .img-grid {
+	width: 550px;
+	height: 230px;
+	}
+}
+
+/* Need to rework the navbar */
+@media(max-width: 808px) {
+	#contact-navbar { /* Remove my blue navbar */
+		display: none;
+	}
+
+	#navbar {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		/* border-top: 6px solid var(--main-color); FAIT BUG NAVBAR-CONTACT */
+	}
+
+	#navbar .navbar-links2 .language-btn-deskop {
+		display: inline-block;
+	}
+
+	#navbar .navbar-links1 {
+		display: none;
+	}
+
+	#navbar .navbar-links2 {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	#navbar .logo {
+		position: relative;
+	}
+
+	#navbar .logo .menu-wrap {
+		display: inline-block;
+	}
+}

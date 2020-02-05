@@ -308,8 +308,6 @@ https://codepen.io/asistapl/pen/QEAgdA?editors=1100 */
 	color: #000;
 }
 
-/* from codePen*/
-
 .grid {
 	position: relative;
 	margin: 0 auto;
@@ -322,6 +320,18 @@ https://codepen.io/asistapl/pen/QEAgdA?editors=1100 */
 }
 
 /* Common style */
+.div-project {
+	position: relative;
+}
+
+.technology-logo {
+	position: absolute;
+	top: -2%;
+	right: -3%;
+	z-index: 2;
+	width: 18%;
+}
+
 .grid figure {
 	position: relative;
 	overflow: hidden;
