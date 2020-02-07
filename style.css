@@ -562,24 +562,6 @@ https://codepen.io/Emanuel_G/pen/YVJOZo?editors=1100 */
       height: 103%;
   }
 
-/* Version 1
-.wrapper-footer {
-	display: flex;
-	justify-content: space-around;
-}
-
-.footer-contact {
-	color: #000;
-	background-color: #f4f4f4;
-
-	font-size: 27px;
-	font-weight: 800;
-	letter-spacing: 8px;
-	text-transform: uppercase;
-
-	padding: 20px;
-} */
-
 footer {
 	background-color: #282e34;
 	text-align: center;
