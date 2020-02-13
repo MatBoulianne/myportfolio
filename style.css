@@ -621,11 +621,6 @@ footer {
 }
 
 @media (max-width: 700px) {
-	body,
-	 html {
-		font-size: 14px;
-	 }
-
 	.title-header {
 		font-size: 35px;
 	}
@@ -642,6 +637,12 @@ footer {
 
 	.ptext {
 		font-size: 35px;
+	}
+
+	.section {
+		padding: 40px 70px;
+
+		font-size: 23px;
 	}
 
 	.section-light {
@@ -685,13 +686,18 @@ footer {
 }
 
 @media (max-width: 400px) {
-	body,
-	 html {
-		font-size: 13px;
+	 h2 {
+	 	font-size: 30px;
 	 }
 
 	.ptext {
 		font-size: 20px;
+	}
+
+	.section {
+		padding: 35px 65px;
+
+		font-size: 21px;
 	}
 
 	.get-in-touch {
