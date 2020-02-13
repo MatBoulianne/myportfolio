@@ -19,12 +19,10 @@
 .content {
 	position: absolute;
 	z-index: 1;
-	top: 20%;
-	left: 38%;
-	margin-top: 105px;
-	margin-left: -145px;
-	width: 600px;
-	height: 350px;
+	top: 35%;
+	left: 20%;
+	width: 55%;
+	height: 25%;
 	text-align: center;
 	transition: all 1000ms;
 }
@@ -38,5 +36,46 @@
 
 .section-social-media .fa-4x {
 	margin: 5px 10px;
+}
+
+.mapouter {
+	text-align: right;
+	height: 500px;
+	max-width: 100%;
+}
+
+.gmap_canvas {
+	overflow: hidden;
+	background: none!important;
+	height: 500px;
+	width: 100%;
+}
+
+@media(max-width: 890px) {
+	.content .title {
+		font-size: 7rem;
+	}
+}
+
+@media(max-width: 750px) {
+	.content .title {
+		font-size: 5.5rem;
+	}
+}
+
+@media(max-width: 600px) {
+	.content .title {
+		font-size: 5rem;
+	}
+
+	.twitter-section {
+		display: none;
+	}
+}
+
+@media(max-width: 400px) {
+	.content .title {
+		font-size: 4rem;
+	}
 }
 
