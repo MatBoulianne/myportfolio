@@ -24,6 +24,10 @@ li {
 	list-style: none;
 }
 
+h2 {
+	margin-bottom: 2rem;
+}
+
 .header {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -282,54 +286,6 @@ https://codepen.io/asistapl/pen/QEAgdA?editors=1100 */
 	font-size: 22px;
 }
 
-.flex-contact {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 40%;
-	width: 100%;
-}
-
-.get-in-touch {
-	text-align: center;
-
-	color: #000;
-	font-size: 37px;
-	font-weight: 800;
-	letter-spacing: 8px;
-	text-transform: uppercase;
-
-	padding-bottom: 4rem;
-}
-
-.get-in-touch .border {
-	background-color: #111;
-	color: #fff;
-	padding: 20px;
-}
-
-.contacts {
-	display: flex;
-	justify-content: space-around;
-
-	font-size: 27px;
-	font-weight: 800;
-	letter-spacing: 8px;
-	text-transform: uppercase;
-
-	padding: 20px;
-}
-
-.contacts .border {
-	background-color: #f4f4f4;
-	padding: 20px;
-}
-
-.contacts a {
-	text-decoration: none;
-	color: #000;
-}
-
 .grid {
 	position: relative;
 	margin: 0 auto;
@@ -583,6 +539,54 @@ https://codepen.io/Emanuel_G/pen/YVJOZo?editors=1100 */
 	height: 103%;
 }
 
+.flex-contact {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 40%;
+	width: 100%;
+}
+
+.get-in-touch {
+	text-align: center;
+
+	color: #000;
+	font-size: 37px;
+	font-weight: 800;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+
+	padding-bottom: 4rem;
+}
+
+.get-in-touch .border {
+	background-color: #111;
+	color: #fff;
+	padding: 20px;
+}
+
+.contacts {
+	display: flex;
+	justify-content: space-around;
+
+	font-size: 27px;
+	font-weight: 800;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+
+	padding: 20px;
+}
+
+.contacts .border {
+	background-color: #f4f4f4;
+	padding: 20px;
+}
+
+.contacts a {
+	text-decoration: none;
+	color: #000;
+}
+
 footer {
 	background-color: #282e34;
 	text-align: center;
@@ -617,10 +621,15 @@ footer {
 }
 
 @media (max-width: 700px) {
+	body,
+	 html {
+		font-size: 14px;
+	 }
+
 	.title-header {
 		font-size: 35px;
 	}
-	
+
 	.pimg1,
 	.pimg2,
 	.pimg3,
@@ -665,10 +674,31 @@ footer {
 	.full-text {
 		display: none;
 	}
+
+	.get-in-touch {
+		font-size: 35px;
+	}
+
+	.contacts {
+		font-size: 25px;
+	}
 }
 
 @media (max-width: 400px) {
+	body,
+	 html {
+		font-size: 13px;
+	 }
+
 	.ptext {
+		font-size: 20px;
+	}
+
+	.get-in-touch {
+		font-size: 20px;
+	}
+
+	.contacts {
 		font-size: 20px;
 	}
 }
