@@ -162,9 +162,18 @@ class UI {
         position.appendChild(div);
 
         if(moveHeader == true) {
+        	let width = window.innerWidth
+				|| document.documentElement.clientWidth
+				|| document.body.clientWidth;
         	// Vanish in 3 seconds
-        	position.style.height = '30%';
-        	setTimeout(() => position.style.height = '25%', 3000);
+        	if(width > 735) {
+        		position.style.height = '265px';
+        		setTimeout(() => position.style.height = '215px', 3000);
+        	} else {
+        		position.style.height = '345px';
+        		setTimeout(() => position.style.height = '295px', 3000);
+        	}
+        	
         	setTimeout(() => document.querySelector('.alert').remove(), 3000);
         } else {
         	setTimeout(() => document.querySelector('.alert').remove(), 3000);
