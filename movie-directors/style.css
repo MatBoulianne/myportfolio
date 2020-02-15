@@ -221,12 +221,6 @@ body {
     padding-left: 20px;
 }
 
-/*.tab .content p {
-    font-size: 0.85rem;
-    line-height: 1.4rem;
-    padding-right: 30px;
-}*/
-
 .tab .content li {
     list-style: none;
     font-size: 1.8rem;
@@ -331,62 +325,68 @@ body {
     }
 
     .tab .content {
-    /* background: #fff; COULEUR DE BASE POUR LE CONTENT */
-    color: #fff;
-    width: 62%; /* 300px  ~ 62% good when at 950px max-width, reduce it accordingly */
-    height: 600px; /* 600px */
-    margin-left: 250px; /* 250px */
-    position: relative;
-    /*padding: 50px 0 0 15px; REMOVED TO CENTER BETTER*/
+        color: #fff;
+        width: 62%; /* 300px  ~ 62% good when at 950px max-width, reduce it accordingly */
+        height: 600px;
+        margin-left: 250px; /* 250px */
+        position: relative;
     }
 
     .tab:first-child {
-    background: url(img/godard1.jpg) no-repeat 52% 52%/cover;
+        background: url(img/godard1.jpg) no-repeat 52% 52%/cover;
     }
 
     .tab:nth-child(2) {
-    background: url(img/herzog4.jpg) no-repeat center center/cover;
+        background: url(img/herzog4.jpg) no-repeat center center/cover;
     }
 
     .tab:nth-child(3) {
-    background: url(img/fellini3.jpg) no-repeat center center/cover;
+        background: url(img/fellini3.jpg) no-repeat center center/cover;
     }
 
     .tab:nth-child(4) {
-    background: url(img/tarkovsky4.jpg) no-repeat 45% 45%/cover;
+        background: url(img/tarkovsky4.jpg) no-repeat 45% 45%/cover;
     }
 
     .tab:nth-child(5) {
-    background: url(img/kubrick5.jpg) no-repeat 55% 55%/cover;
+        background: url(img/kubrick5.jpg) no-repeat 55% 55%/cover;
     }
 
     .tab .godard-movie {
-    background: url(img/godard-movie1.jpe) no-repeat 75% 75%/cover;
+        background: url(img/godard-movie1.jpe) no-repeat 75% 75%/cover;
     }
 
     .tab .herzog-movie {
-    background: url(img/herzog-movie2.jpg) no-repeat center center/cover;
+        background: url(img/herzog-movie2.jpg) no-repeat center center/cover;
     }
 
     .tab .fellini-movie {
-    background: url(img/fellini-movie3.jpg) no-repeat 55% 75%/cover;
+        background: url(img/fellini-movie3.jpg) no-repeat 55% 75%/cover;
     }
 
     .tab .tarkovsky-movie {
-    background: url(img/tarkovsky-movie3.jpg) no-repeat 50% 50%/cover;
+        background: url(img/tarkovsky-movie3.jpg) no-repeat 50% 50%/cover;
     }
 
     .tab .kubrick-movie {
-    background: url(img/kubrick-movie3.jpg) no-repeat 55% 55%/cover;
+        background: url(img/kubrick-movie3.jpg) no-repeat 55% 55%/cover;
     }
 }
 
 @media(max-width: 730px) {
+    #weather-container {
+        right: 15%;
+    }
+
+    .tab .content h1 {
+        font-size: 2rem;
+    }
+
     .tab .content li {
-    list-style: none;
-    font-size: 1.5rem;
-    line-height: 4rem;
-    padding-right: 50px;
-    text-align: center;
-}
+        list-style: none;
+        font-size: 1.5rem;
+        line-height: 4rem;
+        padding-right: 50px;
+        text-align: center;
+    }
 }
