@@ -15,7 +15,7 @@ body {
     color: #fff;
     position: absolute;
     top: 3%;
-    right: 10%;
+    right: 15%;
     opacity: 0.8;
     transition: .4s ease all;
 }
@@ -53,7 +53,7 @@ body {
     height: 30px;
     border-radius: 40px;
     padding: 8px;
-    opacity: 0.2;
+    opacity: 0.6;
     transition: 0.4s;
 }
 
@@ -123,23 +123,23 @@ body {
 }
 
 .tab:first-child {
-	background: url(img/godard2.jpg) no-repeat 52% 52%/cover;
+    background: url(img/godard2.jpg) no-repeat 52% 52%/cover;
 }
 
 .tab:nth-child(2) {
-	background: url(img/herzog2.jpg) no-repeat center center/cover;
+    background: url(img/herzog2.jpg) no-repeat center center/cover;
 }
 
 .tab:nth-child(3) {
-	background: url(img/fellini1.jpg) no-repeat center center/cover;
+    background: url(img/fellini1.jpg) no-repeat center center/cover;
 }
 
 .tab:nth-child(4) {
-	background: url(img/tarkovsky3.jpg) no-repeat 55% 55%/cover;
+    background: url(img/tarkovsky3.jpg) no-repeat 55% 55%/cover;
 }
 
 .tab:nth-child(5) {
-	background: url(img/kubrick4.jpg) no-repeat 62% 62%/cover;
+    background: url(img/kubrick4.jpg) no-repeat 62% 62%/cover;
 }
 
 .tab:hover {
@@ -170,48 +170,48 @@ body {
 }
 
 .tab .godard-movie {
-	background: url(img/godard-movie2.jpg) no-repeat 75% 75%/cover;
+    background: url(img/godard-movie2.jpg) no-repeat 75% 75%/cover;
 }
 
 .tab .godard-movie .overlay {
-	background-color: rgba(7,160,195,0.3); /* Light-Blue */
-	height: 100%;
+    background-color: rgba(7,160,195,0.3); /* Light-Blue */
+    height: 100%;
 }
 
 .tab .herzog-movie {
-	background: url(img/herzog-movie1.jpg) no-repeat center left/cover;
+    background: url(img/herzog-movie1.jpg) no-repeat center left/cover;
 }
 
 .tab .herzog-movie .overlay {
-	background-color: rgba(22,96,27,0.3); /* Green */
-	height: 100%;
+    background-color: rgba(22,96,27,0.3); /* Green */
+    height: 100%;
 }
 
 .tab .fellini-movie {
-	background: url(img/fellini-movie2.jpg) no-repeat center center/cover;
+    background: url(img/fellini-movie2.jpg) no-repeat center center/cover;
 }
 
 .tab .fellini-movie .overlay {
-	background-color: rgba(16,36,72,0.3); /* Blue */
-	height: 100%;
+    background-color: rgba(16,36,72,0.3); /* Blue */
+    height: 100%;
 }
 
 .tab .tarkovsky-movie {
-	background: url(img/tarkovsky-movie1.jpg) no-repeat 25% 25%/cover;
+    background: url(img/tarkovsky-movie1.jpg) no-repeat 25% 25%/cover;
 }
 
 .tab .tarkovsky-movie .overlay {
-	background-color: rgba(240,200,8,0.3); /* Yellow */
-	height: 100%;
+    background-color: rgba(240,200,8,0.3); /* Yellow */
+    height: 100%;
 }
 
 .tab .kubrick-movie {
-	background: url(img/kubrick-movie4.jpg) no-repeat 55% 55%/cover;
+    background: url(img/kubrick-movie4.jpg) no-repeat 55% 55%/cover;
 }
 
 .tab .kubrick-movie .overlay {
-	background-color: rgba(244,121,107,0.3); /* Red */
-	height: 100%;
+    background-color: rgba(244,121,107,0.3); /* Red */
+    height: 100%;
 }
 
 .tab .content h1 {
@@ -228,7 +228,7 @@ body {
 }*/
 
 .tab .content li {
-	list-style: none;
+    list-style: none;
     font-size: 1.8rem;
     line-height: 4rem;
     padding-right: 30px;
@@ -236,12 +236,12 @@ body {
 }
 
 .tab .content a {
-	color: #fff;
-	text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 .tab .content a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .img-director a:before,
