@@ -579,8 +579,10 @@ body {
 /* Fixed Icons */
 #fixed-icons {
 	position: fixed;
-  	bottom: -6%;
-  	left: 1.5%;
+  	/*bottom: -6%;
+  	left: 1.5%;*/
+  	bottom: -50px;
+  	left: 12px;
   	-webkit-transform: translateY(-50%);
   	-ms-transform: translateY(-50%);
   	transform: translateY(-50%);
@@ -660,15 +662,15 @@ body {
 	}
 
 	#section-b {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 
 	#section-b .section-b-left {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 1rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 1rem;
 	}
 
 	#section-b .section-b-right {
@@ -693,17 +695,26 @@ body {
 	#section-b .section-b-right {
 		margin-top: -8rem;
 	}
+
+	#fixed-icons {
+		opacity: .7;
+		transition: .2s ease all;
+	}
+
+	#fixed-icons:hover {
+		opacity: 1;
+	}
 }
 
 /* Events become 1fr and bigger */
 @media(max-width: 859px) {
 	#section-a .section-a-mid {
-	grid-template-columns: 1fr;
+		grid-template-columns: 1fr;
 	}
 
-#section-a .section-a-mid .img-grid {
-	width: 550px;
-	height: 230px;
+	#section-a .section-a-mid .img-grid {
+		width: 550px;
+		height: 230px;
 	}
 }
 
@@ -738,5 +749,72 @@ body {
 
 	#navbar .logo .menu-wrap {
 		display: inline-block;
+	}
+}
+
+@media(max-width: 635px) {
+	#section-a .section-a-mid .img-grid {
+		width: 450px;
+		height: 190px;
+	}
+
+	#section-b .section-b-right {
+		width: 500px;
+	}
+
+	#section-c h1 {
+		font-size: 35px;
+	}
+
+	#section-d .search-form {
+		width: 390px;
+	}
+
+	#section-d .search-form input {
+		width: 320px;
+	}
+}
+
+@media(max-width: 515px) {
+	#showcase .inner-showcase h1 {
+		font-size: 30px;
+	}
+
+	#showcase .inner-showcase p {
+		font-size: 23px;
+	}
+
+	#section-a .section-a-mid .img-grid {
+		width: 300px;
+		height: 150px;
+	}
+
+	#section-a .section-a-mid .img-grid .inner-img {
+		margin: 3rem 0.8rem;
+		font-size: 17px;
+	}
+
+	#section-b .section-b-right {
+		width: 445px;
+	}
+
+	#section-b .section-b-left {
+		font-size: 15px;
+	}
+
+	#section-c h1 {
+		display: none;
+	}
+
+	#section-c .twitter-section .twitter-timeline {
+		margin: auto;
+	}
+
+	#section-d .search-form {
+		width: 340px;
+	}
+
+	#section-d .search-form input {
+		width: 270px;
 	}
 }
