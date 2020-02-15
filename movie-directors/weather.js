@@ -15,7 +15,7 @@ function getSearchMethod(searchTerm) {
 
 function searchWeather(searchTerm) {
 	getSearchMethod(searchTerm);
-	fetch(`http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`).then(result => {
+	fetch(`https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`).then(result => {
 		return result.json();
 	}).then(result => {
 		init(result);
@@ -28,7 +28,7 @@ function init(resultFromServer) {
 	let cityHeader = document.getElementById('city-header');
 	let weatherIcon = document.getElementById('documentIconImg');
 
-	weatherIcon.src = 'http://openweathermap.org/img/w/' + resultFromServer.weather[0].icon + '.png';
+	weatherIcon.src = 'https://openweathermap.org/img/w/' + resultFromServer.weather[0].icon + '.png';
 
 	temperatureElement.innerHTML = Math.floor(resultFromServer.main.temp) + ' &#176C';
 	cityHeader.innerHTML = resultFromServer.name;
